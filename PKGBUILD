@@ -23,7 +23,7 @@ pkgver() {
 build() {
   cd "$srcdir/$pkgname"
   # build concuerror first, to set the right ebin directory
-  make concuerror EBIN=/usr/bin/$pkgname/ebin
+  make concuerror EBIN=/usr/lib/$pkgname/ebin
   make
 }
 
