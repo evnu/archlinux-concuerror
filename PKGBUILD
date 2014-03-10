@@ -1,13 +1,13 @@
 # Maintainer: Magnus Mueller <mamuelle@informatik.hu-berlin.de>
 
 pkgname=concuerror-git
-pkgver=0.0.0
+pkgver=0.r827.c2404cd
 pkgrel=1
 pkgdesc="Concuerror is a systematic testing tool for concurrent Erlang programs"
 arch=('i686' 'x86_64')
 url="https://github.com/mariachris/Concuerror"
 license=('BSD')
-depends=('pacman' 'erlang')
+depends=('erlang')
 makedepends=('git' 'make')
 provides=('concuerror')
 source=("$pkgname"::'git://github.com/mariachris/Concuerror.git')
