@@ -22,9 +22,18 @@ pkgver() {
 
 build() {
   cd "$srcdir/$pkgname"
+  # build concuerror first, to set the right ebin directory
+  make concuerror EBIN=/usr/bin/$pkgname/ebin
   make
 }
 
 package() {
   cd "$srcdir/$pkgname"
+  mkdir -p $pkgdir/usr/{"lib/$pkgname",bin}
+  for subdir in ebin doc;
+  do
+      cp -r $srcdir/$pkgname/$subdir $pkgdir/usr/lib/$pkgname
+  done
+  install -Dm755 concuerror $pkgdir/usr/bin
+  install -Dm644 LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
 }
